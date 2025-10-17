@@ -1,6 +1,7 @@
 # DCC075 Atividade 2
 
 Os parâmetros pedidos no exercício estão setados no próprio código, porém, cada um está demarcado e facilmente alterável.
+Para tanto, basta alterar os parâmetros contidos na seção `Configurações Básicas`, presente no começo do arquivo `.py` 
 
 ## Alunos do Grupo:
 

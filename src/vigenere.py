@@ -8,11 +8,12 @@ MATRICULA = "202265556C"
 KEY = MATRICULA[-5:].encode()  # bytes, ex: b"5556C"
 PLAINTEXT = b"CRYPTOGRAPHY"    # bytes também
 IV = b"ABCDE"                  # vetor de inicialização (bytes)
+TAM_ALFABETO = 256             # Tamanho do alfabeto, como está em bytes considerando a tabela ASCII, usa-se 256
 
 # ==============================
 # Funções utilitárias
 # ==============================
-def pad_bytes(data: bytes):
+def pad_bytes(data: bytes)->bytes:
     """Adiciona padding com b'X' até múltiplo de BLOCK_SIZE."""
     while len(data) % BLOCK_SIZE != 0:
         data += b"X"
@@ -22,14 +23,14 @@ def vigenere_encrypt_block(block: bytes, key: bytes) -> bytes:
     """Cifra tipo Vigenère byte a byte"""
     result = []
     for i in range(len(block)):
-        soma = (block[i] + key[i % len(key)]) % 256
+        soma = (block[i] + key[i % len(key)]) % TAM_ALFABETO
         result.append(soma)
     return bytes(result)
 
 def vigenere_decrypt_block(block: bytes, key: bytes):
     result = []
     for i in range(len(block)):
-        soma = (block[i] - key[i % len(key)]) % 256
+        soma = (block[i] - key[i % len(key)]) % TAM_ALFABETO
         result.append(soma)
     return bytes(result)
 
