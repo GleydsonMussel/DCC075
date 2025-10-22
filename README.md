@@ -1,16 +1,15 @@
-# DCC075 Atividade 2
+# DCC075 Trabalho
 
-Os parâmetros pedidos no exercício estão setados no próprio código, porém, cada um está demarcado e facilmente alterável.
-Para tanto, basta alterar os parâmetros contidos na seção `Configurações Básicas`, presente no começo do arquivo `.py` 
-
-## Alunos do Grupo:
-
-* Pedro Henrique Gomes Alcenio.
-* Pedro Henrique de Souza Rodrigues.
-* Gleydson Candido Mussel.
-
-Para executar, basta executar, estando na raíz da pasta:
-
+## Montar Imagem
 ```console
-python ./src/vigenere.py
+docker build -t prison_break .
 ```
+
+## Subir Container
+```console
+docker run -it --rm \
+  --cap-drop=ALL \
+  --security-opt no-new-privileges \
+  prison_break
+```
+
