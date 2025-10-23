@@ -2,14 +2,18 @@
 
 ## Montar Imagem
 ```console
-docker build -t prison_break .
+docker build -t biohazard .
 ```
 
 ## Subir Container
 ```console
 docker run -it --rm \
-  --cap-drop=ALL \
+  --read-only \
+  --tmpfs /tmp:rw,size=256m \
+  --cap-drop ALL \
   --security-opt no-new-privileges \
-  prison_break
+  -v $(pwd)/reports:/opt/analysis \
+  biohazard
+
 ```
 
