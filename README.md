@@ -1,19 +1,18 @@
-# DCC075 Trabalho
+# TVC01 - Assinatura digital + Criptografia (modo "demo" com parâmetros embutidos)
 
-## Montar Imagem
+
+Arquivos gerados na demo (na pasta atual):
+ - sender_private.pem, sender_public.pem
+ - recipient_private.pem, recipient_public.pem
+ - mensagem_demo.txt
+ - pacote_demo.bin
+ - mensagem_decryptada_demo.txt
+
+# Dependências 
+
+Dependência principal da `cryptography`, para instalá-la, basta executar:
 ```console
-docker build -t biohazard .
+pip install cryptography
 ```
 
-## Subir Container
-```console
-docker run -it --rm \
-  --read-only \
-  --tmpfs /tmp:rw,size=256m \
-  --cap-drop ALL \
-  --security-opt no-new-privileges \
-  -v $(pwd)/reports:/opt/analysis \
-  biohazard
-
-```
-
+Autor: Adaptado para execução automática para facilitar testes.
