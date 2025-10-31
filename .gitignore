@@ -1,0 +1,7 @@
+pacote_demo.bin
+mensagem_demo.txt
+mensagem_decryptada_demo.txt
+sender_private.pem
+sender_public.pem
+recipient_private.pem
+recipient_public.pem
